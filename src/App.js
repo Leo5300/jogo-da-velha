@@ -1,33 +1,37 @@
-// Criação do elemento Square que irá compor o tabuleiro
-import 'src/App.css';
+import './App.css';
 
-function Square({valor}){
-  return(
-  <button className='square'>valor</button>
+// Criação do componente Square
+function Square({ valor }) {
+  function handleClick() {
+    console.log("Botão clicado!!!");
+  }
+
+  return (
+    <button className='square' onClick={handleClick}>
+      {valor}
+    </button>
   );
 }
 
-export default function tabuleiro() {
-  return(
-  <div>
+// Criação do componente Tabuleiro
+export default function Tabuleiro() {
+  return (
     <div>
-    <Square valor="1"></Square>
-   <Square valor="2"></Square>
-  <Square valor="3"></Square>
-</div>
-  <div>
-
- <Square valor="4"></Square>
-  <Square valor="5"></Square>
-   <Square valor="6"></Square>
-</div>
-<div>
-   <Square valor="7"></Square>
-  <Square valor="8"></Square>
-  <Square valor="9"></Square>
- </div>
- </div>
-)
-
-
+      <div>
+        <Square valor="1" />
+        <Square valor="2" />
+        <Square valor="3" />
+      </div>
+      <div>
+        <Square valor="4" />
+        <Square valor="5" />
+        <Square valor="6" />
+      </div>
+      <div>
+        <Square valor="7" />
+        <Square valor="8" />
+        <Square valor="9" />
+      </div>
+    </div>
+  );
 }
