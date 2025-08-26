@@ -1,5 +1,5 @@
 // Criação do elemento Square que irá compor o tabuleiro
-import '/App.css';
+import 'src/App.css';
 
 function Square({valor}){
   return(
