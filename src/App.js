@@ -14,8 +14,13 @@ function Square({ valor, onSquareClick }) {
 export default function Tabuleiro() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const [vencedor, setVencedor] = useState(null);
 
-  const vencedor = haVencedor(squares);
+  const vencedorLinha = haVencedor(squares);
+
+  if (vencedorLinha && vencedor !== vencedorLinha) {
+    setVencedor(vencedorLinha);
+  }
 
   function handleClick(i) {
     if (squares[i] || vencedor) return;
@@ -28,7 +33,20 @@ export default function Tabuleiro() {
 
   return (
     <div className="game-container">
-      {vencedor && <div className="status">Vencedor: {vencedor}</div>}
+      <h1>Jogo da Velha</h1>
+
+      {/* Mostrar o vencedor, se houver */}
+      {vencedor ? (
+        <div className="status vencedor">
+          Vencedor: <span className="vencedor-nome">{vencedor}</span>
+        </div>
+      ) : (
+        !squares.includes(null) && (
+          <div className="status">
+            Não há vencedor
+          </div>
+        )
+      )}
 
       <div className="board-row">
         <Square valor={squares[0]} onSquareClick={() => handleClick(0)} />

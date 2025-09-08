@@ -1,5 +1,77 @@
-.square{
-  font-size: medium;
-  color: blue;
+/* Estilos globais */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #80d0c7, #8e44ad); /* Gradiente suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+  flex-direction: column;
+  text-align: center;
+}
 
+/* Título do jogo */
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Container do jogo */
+.game-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+/* Estilos dos quadrados */
+.Square {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.Square:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.Square:active {
+  background-color: #d1d1d1;
+}
+
+/* Layout do tabuleiro */
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mensagem de status */
+.status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}
+
+.vencedor {
+  color: #ff6f61; /* Cor quente para o vencedor */
+}
+
+.vencedor-nome {
+  color: #f39c12; /* Destaque para o nome do vencedor */
 }
